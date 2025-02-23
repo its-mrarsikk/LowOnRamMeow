@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+	  <PublishSingleFile>true</PublishSingleFile>
+	  <SelfContained>true</SelfContained>
+	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	  <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="cat1.ico" />
+    <None Remove="cat2.png" />
+    <None Remove="cat3.png" />
+    <None Remove="cat4.png" />
+    <None Remove="cat5.png" />
+    <None Remove="icon.ico" />
+    <None Remove="meow1.wav" />
+    <None Remove="meow2.wav" />
+    <None Remove="meow3.wav" />
+    <None Remove="meow4.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="cat1.png" />
+    <EmbeddedResource Include="cat2.png" />
+    <EmbeddedResource Include="cat3.png" />
+    <EmbeddedResource Include="cat4.png" />
+    <EmbeddedResource Include="cat5.png" />
+    <EmbeddedResource Include="icon.ico" />
+    <EmbeddedResource Include="meow1.wav" />
+    <EmbeddedResource Include="meow2.wav" />
+    <EmbeddedResource Include="meow3.wav" />
+    <EmbeddedResource Include="meow4.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Management" Version="9.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
